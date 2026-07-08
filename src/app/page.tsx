@@ -31,21 +31,21 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
         isScrolled 
-          ? "bg-white/98 backdrop-blur-md shadow-lg py-2" 
-          : "bg-white/95 backdrop-blur-sm shadow-md py-0"
+          ? "bg-white/98 backdrop-blur-md shadow-lg py-2 border-gray-200/50" 
+          : "bg-white/95 backdrop-blur-sm shadow-md py-0 border-transparent"
       }`}>
-        <div className="max-w-7xl mx-auto pl-10 pr-8 sm:pl-16 sm:pr-12 lg:pl-24 lg:pr-20">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto pl-6 pr-4 sm:pl-10 sm:pr-8 lg:pl-16 lg:pr-12">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             {/* Logo */}
-            <a href="#beranda" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#1a5632] to-[#2d8a52] rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                <span className="text-white font-bold text-xl">DU</span>
+            <a href="#beranda" className="flex items-center gap-2 sm:gap-3 group">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#1a5632] to-[#2d8a52] rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <span className="text-white font-bold text-base sm:text-xl">DU</span>
               </div>
               <div>
-                <h1 className="font-bold text-[#1a5632] text-lg leading-tight group-hover:text-[#2d8a52] transition-colors">Darul Ulum</h1>
-                <p className="text-xs text-[#c9a94f] font-medium">Assyar&apos;iyyah</p>
+                <h1 className="font-bold text-[#1a5632] text-sm sm:text-lg leading-tight group-hover:text-[#2d8a52] transition-colors">Darul Ulum</h1>
+                <p className="text-[10px] sm:text-xs text-[#c9a94f] font-medium">Assyar&apos;iyyah</p>
               </div>
             </a>
 
@@ -63,8 +63,8 @@ export default function Home() {
                   href={`#${item.id}`}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     activeSection === item.id
-                      ? "bg-[#1a5632]/10 text-[#1a5632]"
-                      : "text-gray-600 hover:text-[#1a5632] hover:bg-gray-50"
+                      ? "bg-[#1a5632] text-white shadow-sm"
+                      : "text-gray-600 hover:text-[#1a5632] hover:bg-gray-100"
                   }`}
                 >
                   {item.label}
@@ -72,7 +72,7 @@ export default function Home() {
               ))}
               <a
                 href="#pendaftaran"
-                className="bg-[#1a5632] text-white px-6 py-2.5 rounded-full hover:bg-[#2d8a52] transition-all duration-200 shadow-md hover:shadow-lg text-sm font-semibold ml-2"
+                className="bg-[#1a5632] text-white px-6 py-2.5 rounded-full hover:bg-[#2d8a52] transition-all duration-200 shadow-md hover:shadow-lg text-sm font-semibold ml-2 hover:scale-105"
               >
                 Daftar Sekarang
               </a>
@@ -81,7 +81,7 @@ export default function Home() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-[#1a5632] p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="lg:hidden text-[#1a5632] p-2 hover:bg-gray-100 rounded-xl transition-all duration-200 active:scale-95"
               aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,9 +96,11 @@ export default function Home() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}>
+        <div className={`lg:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? "max-h-96 opacity-100 translate-y-0" 
+            : "max-h-0 opacity-0 -translate-y-2"
+        } overflow-hidden`}>
           <div className="bg-white border-t border-gray-100 px-6 py-4 space-y-2 shadow-lg">
             {[
               { id: "beranda", label: "Beranda" },
@@ -113,7 +115,7 @@ export default function Home() {
                 onClick={closeMenu}
                 className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
-                    ? "bg-[#1a5632]/10 text-[#1a5632]"
+                    ? "bg-[#1a5632] text-white shadow-sm"
                     : "text-gray-600 hover:text-[#1a5632] hover:bg-gray-50"
                 }`}
               >
@@ -123,7 +125,7 @@ export default function Home() {
             <a
               href="#pendaftaran"
               onClick={closeMenu}
-              className="block bg-[#1a5632] text-white px-4 py-3 rounded-xl hover:bg-[#2d8a52] transition-all duration-200 text-center text-sm font-semibold mt-2"
+              className="block bg-[#1a5632] text-white px-4 py-3 rounded-xl hover:bg-[#2d8a52] transition-all duration-200 text-center text-sm font-semibold mt-2 active:scale-98"
             >
               Daftar Sekarang
             </a>
