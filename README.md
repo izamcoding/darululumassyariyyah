@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pondok Pesantren Darul Ulum Assyar'iyyah
 
-## Getting Started
+Website resmi Pondok Pesantren Darul Ulum Assyar'iyyah yang terletak di Desa Leyangan, Ungaran Timur, Kabupaten Semarang, Jawa Tengah.
 
-First, run the development server:
+## 🎯 Fitur Website
+
+- **Beranda** - Hero section dengan informasi utama pesantren
+- **Tentang** - Profil, Visi, dan Misi pesantren
+- **Program** - Program-program unggulan pendidikan
+- **Galeri** - Galeri kegiatan santri dan pondok
+- **Kontak** - Informasi kontak dan form pesan
+- **Pendaftaran** - Info pendaftaran santri baru
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 16 dengan App Router
+- **Styling**: Tailwind CSS
+- **Bahasa**: TypeScript
+- **Deployment**: Vercel
+
+## 📦 Instalasi
 
 ```bash
+# Clone repository
+git clone https://github.com/your-username/pondok-web.git
+
+# Masuk ke direktori
+cd pondok-web
+
+# Install dependencies
+npm install
+
+# Jalankan development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000) untuk melihat website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Deploy ke Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Cara 1: Via Vercel CLI
 
-## Learn More
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-To learn more about Next.js, take a look at the following resources:
+# Login ke Vercel
+vercel login
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Deploy
+vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Cara 2: Via GitHub
 
-## Deploy on Vercel
+1. Push repository ke GitHub
+2. Login ke [vercel.com](https://vercel.com)
+3. Klik "New Project"
+4. Import repository dari GitHub
+5. Klik "Deploy"
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Cara 3: Via Drag & Drop
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Login ke [vercel.com](https://vercel.com)
+2. Klik "New Project" → "Import Third-Party Git Repository"
+3. Atau gunakan [vercel.com/new](https://vercel.com/new)
+4. Drag & drop folder project
+
+## ⚙️ Konfigurasi
+
+### Ganti Informasi Kontak
+
+Edit file `src/app/page.tsx` dan cari bagian kontak untuk mengganti:
+- Nomor telepon/WhatsApp
+- Alamat email
+- Link media sosial
+
+### Ganti Warna Tema
+
+Edit file `src/app/globals.css` untuk mengganti warna tema:
+```css
+:root {
+  --primary: #1a5632;    /* Warna utama (hijau) */
+  --primary-light: #2d8a52;
+  --secondary: #c9a94f;  /* Warna aksen (emas) */
+  --background: #f8f6f0;
+  --text: #1a1a1a;
+}
+```
+
+### Ganti Nama Domain
+
+1. Buka dashboard Vercel
+2. Pilih project → Settings → Domains
+3. Tambahkan custom domain
+
+## 📱 Responsive Design
+
+Website ini sudah responsive dan dapat diakses dengan baik di:
+- Desktop
+- Tablet
+- Mobile
+
+## 📝 Catatan
+
+- Website ini menggunakan static export (tidak perlu backend)
+- Semua gambar menggunakan emoji placeholder, bisa diganti dengan gambar asli
+- Form kontak perlu diintegrasikan dengan backend atau service seperti Formspree
+
+## 📄 License
+
+© 2024 Pondok Pesantren Darul Ulum Assyar'iyyah. All Rights Reserved.
