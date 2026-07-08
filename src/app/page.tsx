@@ -36,7 +36,7 @@ export default function Home() {
           ? "bg-white/98 backdrop-blur-md shadow-lg py-2 border-gray-200/50" 
           : "bg-white/95 backdrop-blur-sm shadow-md py-0 border-transparent"
       }`}>
-        <div className="max-w-7xl mx-auto pl-16 pr-4 sm:pl-24 sm:pr-8 lg:pl-32 lg:pr-12">
+        <div className="max-w-7xl mx-auto pl-20 pr-4 sm:pl-40 sm:pr-8 lg:pl-96 lg:pr-12">
           <div className="flex justify-between items-center h-16 sm:h-20">
             {/* Logo */}
             <a href="#beranda" className="flex items-center gap-2 sm:gap-3 group">
